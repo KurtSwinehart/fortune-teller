@@ -22,7 +22,7 @@ public class FortuneTeller {
 
 		System.out.println("What is your favorite ROYGBIV color? (Please enter HELP to get a list of ROYGBIV colors.");
 		String favoriteColor = input.nextLine();
-		if (favoriteColor.toLowerCase().equals("help")) {
+		while (favoriteColor.equalsIgnoreCase("help")) {
 			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, and violet.");
 			System.out.println("What is your favorite ROYGBIV color?");
 			favoriteColor = input.nextLine();
@@ -30,6 +30,8 @@ public class FortuneTeller {
 
 		System.out.println("How many siblings do you have?");
 		int numberSiblings = input.nextInt();
+
+		input.close();
 
 		String resultRetire;
 		if (age % 2 == 0) {
@@ -62,7 +64,7 @@ public class FortuneTeller {
 			resultTransportation = "chariot";
 		} else if (favoriteColor.toLowerCase().equals("green")) {
 			resultTransportation = "taxi";
-		} else if (favoriteColor.toLowerCase().equals ("blue")) {
+		} else if (favoriteColor.toLowerCase().equals("blue")) {
 			resultTransportation = "rickshaw";
 		} else if (favoriteColor.toLowerCase().equals("indigo")) {
 			resultTransportation = "motor scooter";
@@ -80,10 +82,10 @@ public class FortuneTeller {
 		} else if (birthMonth == 0 || birthMonth >= 13) {
 			resultBankBalance = "0.00";
 		}
-		
-		System.out.println(firstName + " " + lastName + " will retire in " + resultRetire + " with " +
-		resultBankBalance + " in the bank, a vacation home in " + resultVacationHome + ", and travel by " + 
-				resultTransportation + ".");
+
+		System.out.println(firstName + " " + lastName + " will retire in " + resultRetire + " with " + resultBankBalance
+				+ " in the bank, a vacation home in " + resultVacationHome + ", and travel by " + resultTransportation
+				+ ".");
 	}
 
 }
